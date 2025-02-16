@@ -17,9 +17,23 @@ Are you ready ? Let's go
 
 Clone the repository then run **npm install**
 
-## Step 2: Link your api to Mongo DB
+## Step 2: Create .env file
+Create a file named .env at the root of your project and add the following content:
+  #### For MongoDB Atlas:
+  ```properties
+  MONGODB_URL=mongodb+srv://<username>:<password>@cluster0.eox3j.mongodb.net/player-db?retryWrites=true&w=majority
+  PORT=3000
+  ```
 
-You can install mongodb locally or use Mongo Atlas (online). In both cases, go to the **app.js** file then replace the url **mongodb://localhost:27017/player-db** with your url. In my case I use Mongo DB locally. It is therefore available on port **27017**(by default) and the name of my database is **player-db**.
+  Replace <username> and <password> with your actual MongoDB Atlas credentials. The database name (player-db) is specified in the URL.
+
+   #### For local MongoDB:
+   ```properties
+  MONGODB_URL=mongodb://localhost:27017/player-db
+  PORT=3000
+  ```
+
+  This file provides your API with the necessary details to connect to MongoDB. Choose the appropriate configuration based on your environment.
 
 ## Step 3: Launch your project
 
@@ -57,3 +71,19 @@ So we have a total of 5 routes
 * List of players
 <img src="https://i.ibb.co/RSgvjLt/list-of-players.png" alt="list-of-players" border="0">
 
+## Documentation
+
+For a comprehensive overview of the API endpoints and to test the API, please refer to our documentation : https://documenter.getpostman.com/view/16446301/2sAYXBEeV5#c7c23cc9-2dbd-499e-abde-d443127a317b
+
+## Contributing
+
+Contributions are welcome! If you would like to contribute to this project, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix: `git checkout -b feature/your-feature-name`.
+3. Make your changes and ensure the code passes all tests.
+4. Commit your changes with a clear commit message.
+5. Push to your branch: `git push origin feature/your-feature-name`.
+6. Open a pull request describing your changes in detail.
+
+Please ensure your contributions respect the project's coding style and include appropriate tests where applicable.
